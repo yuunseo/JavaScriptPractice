@@ -1,2 +1,2 @@
 # JavaScriptPractice
-JavaScript 공부
+JavaScript가 뭔데?
