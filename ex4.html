@@ -37,17 +37,17 @@
     <p>아무내용 아무거나 자바스크립트 꿀~잼</p>
 
     //같은 동작 새로운 버튼
-    <input id="night_day2" type="button" value="night" onclick="
-    if(document.querySelector('#night_day2').value === 'night'){
-      //해당 버튼의 id를 통해 접근해서 알아온 value값이 night인 경우 = 버튼에 night라 써 있을 경우
+    <input type="button" value="night" onclick="
+    if(this.value === 'night'){
+      //자기 자신이므로 this로 가리킴 = 자신의 버튼에 night라 써 있을 경우
       document.querySelector('body').style.backgroundColor='black';
       document.querySelector('body').style.color='white';
-      document.querySelector('#night_day2').value = 'day'
+      this.value = 'day'
       //야간모드로 실행해줘
     }else{//그게 아니면, day라고 써있으면 주간모드 실행해줘
       document.querySelector('body').style.backgroundColor='white';
       document.querySelector('body').style.color='black';
-      document.querySelector('#night_day2').value = 'night'
+      this.value = 'night'
     }
   ">
 
