@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Object</h1>
+        <script>
+            var coworkers = {
+                "one" : "yunseo",
+                "two" : "yundong"
+            };
+
+            document.write("one: "+coworkers.one+'<br>');
+            document.write("two: "+coworkers.two+'<br>');
+            
+            //기존에 존재하는 객체에 값 추가
+            coworkers.three = "yunbook";
+            document.write("three: "+coworkers.three+'<br>');
+            
+            //공백이 들어간 아이템을 쓸 땐, []로 접근
+            coworkers["fo ur"] = "yunnam";
+            document.write("fo ur: "+coworkers["fo ur"]+"<br>");
+        </script>
+    </body>
+</html>
