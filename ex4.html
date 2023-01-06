@@ -6,35 +6,43 @@
   </head>
   <body>
     <script>
+
+      //body색상 변경 함수
+      function BodysetColor(color){
+        document.querySelector('body').style.color=color;
+      }
+
+      //body 배경 색상 변경 함수
+      function BodySetBackgroungColor(color){
+        document.querySelector('body').style.backgroundColor=color;
+      }
+
+      //링크 색상 변경 함수
+      function LinksetColor(color){
+        var alist = document.querySelectorAll('a');
+          var i = 0;
+          while(i < alist.length){
+              console.log(alist[i]);
+              alist[i].style.color=color;
+              i += 1;
+          }
+      }
+
+      //모드 변경 함수
       function nightday_button(self){
         
         var target = document.querySelector('body');
         if(self.value === 'night'){
-          //자기 자신이므로 this로 가리킴 = 자신의 버튼에 night라 써 있을 경우
-          //야간모드 실행해줘
-          target.style.backgroundColor='black';
-          target.style.color='white';
-          self.value = 'day'
-          var alist = document.querySelectorAll('a');
-          //야간모드일 때의 링크 색 변경
-          var i = 0;
-          while(i < alist.length){
-              console.log(alist[i]);
-              alist[i].style.color='powderblue';
-              i += 1;
-          }
+          BodySetBackgroungColor('black');
+          BodysetColor('white');
+          self.value = 'day';
+          LinksetColor('powderblue');
 
-        }else{//그게 아니면, day라고 써있으면 주간모드 실행해줘
-          target.style.backgroundColor='white';
-          target.style.color='black';
-          self.value = 'night'
-          //주간 모드일 땐, 잘보이게 다시 색 변경
-          var alist = document.querySelectorAll('a');
-          var i = 0;
-          while(i < alist.length){
-              alist[i].style.color='blue';
-              i += 1;
-          }
+        }else{
+         BodySetBackgroungColor('white');
+          BodysetColor('black');
+          self.value = 'night';
+          LinksetColor('blue');
         }
       }
     </script>
