@@ -6,6 +6,7 @@
     </head>
     <body>
         <h1>Object</h1>
+        <h2>Create</h2>
         <script>
             var coworkers = {
                 "one" : "yunseo",
@@ -22,6 +23,14 @@
             //공백이 들어간 아이템을 쓸 땐, []로 접근
             coworkers["fo ur"] = "yunnam";
             document.write("fo ur: "+coworkers["fo ur"]+"<br>");
+        </script>
+
+        <h2>Iterate</h2>
+        <script>
+            for(var key in coworkers){
+                document.write(key+':');
+                document.write(coworkers[key]+'<br>');
+            }
         </script>
     </body>
 </html>
