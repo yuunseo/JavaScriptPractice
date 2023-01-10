@@ -7,18 +7,14 @@
   <body>
     <script>
 
-      //body색상 변경 함수
-      function BodysetColor(color){
-        document.querySelector('body').style.color=color;
-      }
-
-      //body 배경 색상 변경 함수
-      function BodySetBackgroungColor(color){
-        document.querySelector('body').style.backgroundColor=color;
-      }
-
-      //링크 색상 변경 함수
-      function LinksetColor(color){
+      var Body = {
+        setColor:function(color){
+          document.querySelector('body').style.color=color;
+        },
+        SetBackgroungColor:function(color){
+          document.querySelector('body').style.backgroundColor=color;
+        },
+        LinksetColor(color){
         var alist = document.querySelectorAll('a');
           var i = 0;
           while(i < alist.length){
@@ -28,21 +24,24 @@
           }
       }
 
+      }
+      
+
       //모드 변경 함수
       function nightday_button(self){
         
         var target = document.querySelector('body');
         if(self.value === 'night'){
-          BodySetBackgroungColor('black');
-          BodysetColor('white');
+          Body.SetBackgroungColor('black');
+          Body.setColor('white');
           self.value = 'day';
-          LinksetColor('powderblue');
+          Body.LinksetColor('powderblue');
 
         }else{
-         BodySetBackgroungColor('white');
-          BodysetColor('black');
+         Body.SetBackgroungColor('white');
+          Body.setColor('black');
           self.value = 'night';
-          LinksetColor('blue');
+          Body.LinksetColor('blue');
         }
       }
     </script>
