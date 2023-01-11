@@ -5,45 +5,7 @@
     <title>WEB1 - JavaScript</title>
   </head>
   <body>
-    <script>
-
-      var Body = {
-        setColor:function(color){
-          document.querySelector('body').style.color=color;
-        },
-        SetBackgroungColor:function(color){
-          document.querySelector('body').style.backgroundColor=color;
-        },
-        LinksetColor(color){
-        var alist = document.querySelectorAll('a');
-          var i = 0;
-          while(i < alist.length){
-              console.log(alist[i]);
-              alist[i].style.color=color;
-              i += 1;
-          }
-      }
-
-      }
-      
-
-      //모드 변경 함수
-      function nightday_button(self){
-        
-        var target = document.querySelector('body');
-        if(self.value === 'night'){
-          Body.SetBackgroungColor('black');
-          Body.setColor('white');
-          self.value = 'day';
-          Body.LinksetColor('powderblue');
-
-        }else{
-         Body.SetBackgroungColor('white');
-          Body.setColor('black');
-          self.value = 'night';
-          Body.LinksetColor('blue');
-        }
-      }
+    <script src="colors.js">
     </script>
     <h1><a href="ex1.html">WEB</a></h1>
     <input type="button" value="night" onclick="nightday_button(this)
