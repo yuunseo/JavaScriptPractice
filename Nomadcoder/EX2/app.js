@@ -8,3 +8,5 @@ console.log(title);
 const element = document.querySelectorAll(".hello h1");
 console.log(element);
 //모든 element들을 가져오고 싶으면 All로!
+//className이 아닌 id값으로 가져오고 싶다면 .이 아니라 #으로 가져오자 
+//"#id값 tagName"
