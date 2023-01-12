@@ -1,5 +1,6 @@
 console.log(46152);
 console.log('hi my name is yunseo');
+<<<<<<< HEAD:app.js
 //log란 print와 같은 역할. 괄호 속 내용을 console에서 출력해준다.
 
 const a = 5;
@@ -22,3 +23,6 @@ let b = 10;
 console.log(b);
 b = 7;
 console.log(b);
+=======
+//log란 print와 같은 역할. 괄호 속 내용을 출력해준다.
+>>>>>>> 109ed4ec8bea91a04ee3c126ebfc2feff00a7a71:Nomadcoder/EX1/app.js
