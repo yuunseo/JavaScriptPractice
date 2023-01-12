@@ -1,21 +1,24 @@
-const playerName = "yunseo";
-const playerAge = "21";
-//서로 다른 자료형이지만 관련된 것들을 한번에 저장하여 꺼내올 수 있게
-//object로 저장해보자.
+function sayHello(nameOfPerson){
+    console.log("Hello!",nameOfPerson);
+}
 
-//리스트는 대괄호 []
-//객체는 중괄호{}
-const player = {
+sayHello("yunseo");
+sayHello("yundong");
+sayHello("yunnam");
+sayHello("yunbook");
+
+//함수를 정의하고 사용하는 방법과
+//함수의 매개변수(인자)를 전달하는 방법
+//괄호에 값을 넣어 함수에 전달하여 실행하자.
+
+const player ={
     name: "yunseo",
-    age: 21,
-    points: 100
-
+    sayBye: function(name){
+        console.log("Bye!",name);
+    }
 };
+//객체 내에도 함수를 정의할 수 있다.
+//괄호의 사용 방식은 동일하다.
 
-//객체의 item들을 . 을 이용해 가져올 수 있다.
 console.log(player.name);
-console.log(player.age);
-
-//추가도 가능
-player.height = 165;
-console.log(player);
+player.sayBye(player.name);
