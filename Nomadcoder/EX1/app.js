@@ -1,19 +1,21 @@
-const mon = "mon";
-const tue = "tue";
-const wed = "wed";
-const thu = "thu";
-const fri = "fri";
-const sat = "sat";
+const playerName = "yunseo";
+const playerAge = "21";
+//서로 다른 자료형이지만 관련된 것들을 한번에 저장하여 꺼내올 수 있게
+//object로 저장해보자.
 
-//하나하나 쓰고 출력하기 귀찮고 번거로움.
-//리스트, 즉 배열을 사용해서 저장해보자.
+//리스트는 대괄호 []
+//객체는 중괄호{}
+const player = {
+    name: "yunseo",
+    age: 21,
+    points: 100
 
-const daysOfWeek = [mon,tue,wed,thu,fri,sat];
-console.log(daysOfWeek);
+};
 
-console.log(daysOfWeek[0]);
-//index를 이용해서 접근 할 수 있다.
+//객체의 item들을 . 을 이용해 가져올 수 있다.
+console.log(player.name);
+console.log(player.age);
 
-daysOfWeek.push("sun");
-//.push() 메소드로 배열에 값 추가하기
-console.log(daysOfWeek);
+//추가도 가능
+player.height = 165;
+console.log(player);
