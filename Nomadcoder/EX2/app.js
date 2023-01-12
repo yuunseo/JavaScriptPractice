@@ -1,12 +1,6 @@
 const title = document.querySelector(".hello h1");
 console.log(title);
-//hello라는 class내의 h1태그인 젤 첫 element를 가져와라
-//.을 쓴 이유는 CSS selector기 때문!
-//class명은 앞에 .으로 class라는 것을 명시해야하고
-//가져오고픈 태그명도 써줘야해!
+console.dir(title);
+//title의 메소드들?이 다 나옴
 
-const element = document.querySelectorAll(".hello h1");
-console.log(element);
-//모든 element들을 가져오고 싶으면 All로!
-//className이 아닌 id값으로 가져오고 싶다면 .이 아니라 #으로 가져오자 
-//"#id값 tagName"
+title.style.color = "blue";
