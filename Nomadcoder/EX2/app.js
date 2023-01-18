@@ -29,3 +29,9 @@ function handleWindowResize(){
 
 window.addEventListener("resize",handleWindowResize);
 //크기가 바뀌면, 배경 색상이 바뀜.
+
+function handelWindowCopy(){
+    alert("copied!");
+}
+window.addEventListener("copy",handelWindowCopy);
+//복사하면 경고창 뜸.
