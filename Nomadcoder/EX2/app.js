@@ -35,3 +35,14 @@ function handelWindowCopy(){
 }
 window.addEventListener("copy",handelWindowCopy);
 //복사하면 경고창 뜸.
+
+//wifi 관련 이벤트도 추가
+function handelWindowOffline(){
+    alert("SOS no WIFI !");
+}
+window.addEventListener("offline",handelWindowOffline);
+
+function handelWindowOnline(){
+    alert("ALL GOOD~");
+}
+window.addEventListener("online",handelWindowOnline);
