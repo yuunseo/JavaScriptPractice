@@ -1,10 +1,11 @@
 const h1 = document.querySelector(".hello h1");
 
 function handleTitleClick(){
-    if(h1.className === "active"){
-        h1.className = "";
+    const activeClass = "active";
+    if(h1.classList.contains(activeClass)){
+        h1.classList.remove(activeClass);
     }else{
-        h1.className = "active";
+        h1.classList.add(activeClass);
     }
     
 }
