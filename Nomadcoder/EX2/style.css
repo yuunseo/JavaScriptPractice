@@ -1,3 +1,10 @@
 h1 {
     color: cornflowerblue;
 }
+
+/*모두 tomato로 바꾸는 함수 active를 생성함 
+이는 js에 전달해줘야 실행됨*/
+.active { 
+    color: tomato;
+    transition: color 0.5s ease-in-out;
+}
