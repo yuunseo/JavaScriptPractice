@@ -1,7 +1,13 @@
 const clock = document.querySelector("h2#clock");
 
-function sayHello(){
-    console.log("hello");
+
+function getClock(){
+    const date = new Date();
+    const Hours = String(date.getHours()).padStart(2,'0');
+    const Minutes = String(date.getMinutes()).padStart(2,'0');
+    const Seconds = String(date.getSeconds()).padStart(2,'0');
+
+    clock.innerText =`${Hours}:${Minutes}:${Seconds}`;
 }
-setInterval(sayHello,5000); //5초 간격으로 함수를 실행해라.
-setTimeout(sayHello,3000); //3초 후에 함수를 실행해라.
+getClock();
+setInterval(getClock,1000);
