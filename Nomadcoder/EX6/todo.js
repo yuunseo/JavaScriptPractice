@@ -3,6 +3,8 @@ const toDoList = document.querySelector("#todo-list"); //todo list 요소 가져
 const toDoInput = toDoForm.querySelector("input"); //todo form의 input 요소 가져오기
 const toDos =[]; //localstorage에 넣을라고
 
+const TODOS_KEY = "todos";
+
 function saveToDos(){
     localStorage.setItem("todos",JSON.stringify(toDos));
 }
@@ -41,3 +43,15 @@ function handleToDoSubmit(event){
     saveToDos();
 }
 toDoForm.addEventListener("submit",handleToDoSubmit); //todo form의 submit 동작 제어하기
+
+function syaHello(item){
+    
+}
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+if(savedToDos){
+    const parsedToDos = JSON.parse(savedToDos);
+    parsedToDos.forEach(item => {//원소들을 갖는 배열일 때, 각각 원소에 적용
+        console.log("가보자고,",item);
+    });
+}
