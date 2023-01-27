@@ -1,7 +1,7 @@
 const toDoForm = document.querySelector("#todo-form"); //todo form요소 가져오기
 const toDoList = document.querySelector("#todo-list"); //todo list 요소 가져오기
 const toDoInput = toDoForm.querySelector("input"); //todo form의 input 요소 가져오기
-const toDos =[]; //localstorage에 넣을라고
+let toDos =[]; //localstorage에 넣을라고
 
 const TODOS_KEY = "todos";
 
@@ -51,7 +51,6 @@ function syaHello(item){
 const savedToDos = localStorage.getItem(TODOS_KEY);
 if(savedToDos){
     const parsedToDos = JSON.parse(savedToDos);
-    parsedToDos.forEach(item => {//원소들을 갖는 배열일 때, 각각 원소에 적용
-        console.log("가보자고,",item);
-    });
+    toDos = parsedToDos; //기존거 사라지지 않고, 추가되게 하기
+    parsedToDos.forEach(paintToDo);
 }
