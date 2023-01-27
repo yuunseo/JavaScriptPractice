@@ -1,6 +1,11 @@
 const toDoForm = document.querySelector("#todo-form"); //todo form요소 가져오기
 const toDoList = document.querySelector("#todo-list"); //todo list 요소 가져오기
 const toDoInput = toDoForm.querySelector("input"); //todo form의 input 요소 가져오기
+const toDos =[]; //localstorage에 넣을라고
+
+function saveToDos(){
+    localStorage.setItem("todos",JSON.stringify(toDos));
+}
 
 function deleteToDo(event){
     const li = event.target.parentElement ; //버튼 누르면, 어떤 버튼이 눌렸는지 확인
@@ -31,6 +36,8 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value ="";
+    toDos.push(newTodo);
     paintToDo(newTodo);
+    saveToDos();
 }
 toDoForm.addEventListener("submit",handleToDoSubmit); //todo form의 submit 동작 제어하기
