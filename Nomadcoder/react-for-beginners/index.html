@@ -10,10 +10,13 @@
         const btn = React.createElement("button",{
             onClick: () => console.log("im clicked!"),
         },"Click Me");
-        const h3 = React.createElement("h3",{
+        const Title = (<h3 id="title" onMouseEnter={()=>console.log("mouse enter")}>
+            Hello, Im Yunseo
+            </h3>);
+        /* const h3 = React.createElement("h3",{id:"title",
             onMouseEnter: () => console.log("mouse enter"),
-        },"Hello, Im Yunseo");
-        const container = React.createElement("div",null,[h3,btn]);
+        },"Hello, Im Yunseo"); */
+        const container = React.createElement("div",null,[Title,btn]);
         ReactDOM.createRoot(root).render(container);
     </script>
 </html>
