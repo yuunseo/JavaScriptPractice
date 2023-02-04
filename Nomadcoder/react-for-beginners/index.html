@@ -7,8 +7,13 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script>
         const root = document.getElementById("root");
-        const span = React.createElement("span",{ id:"sexy-span",
-    style:{color:'red'}},"Hello, Im Yunseo");
-        ReactDOM.createRoot(root).render(span);
+        const btn = React.createElement("button",{
+            onClick: () => console.log("im clicked!"),
+        },"Click Me");
+        const h3 = React.createElement("h3",{
+            onMouseEnter: () => console.log("mouse enter"),
+        },"Hello, Im Yunseo");
+        const container = React.createElement("div",null,[h3,btn]);
+        ReactDOM.createRoot(root).render(container);
     </script>
 </html>
