@@ -9,9 +9,9 @@
     <script type="text/babel">
         const root = document.getElementById("root");
         const Container = ()=>
-            {const data = React.useState(0);
+            {const [counter,modifier] = React.useState(0);
             return(<div>
-            <h3>Total Clicks: {data[0]}</h3>
+            <h3>Total Clicks: {counter}</h3>
             <button>Click Me</button>
             </div>)
             };
