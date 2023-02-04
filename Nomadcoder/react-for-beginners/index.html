@@ -8,10 +8,13 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
         const root = document.getElementById("root");
-        const Container = ()=> <div>
-            <h3>Total Clicks: 0</h3>
+        const Container = ()=>
+            {const data = React.useState(0);
+            return(<div>
+            <h3>Total Clicks: {data[0]}</h3>
             <button>Click Me</button>
-            </div>
+            </div>)
+            };
         ReactDOM.createRoot(root).render(<Container/>);
     </script>
 </html>
