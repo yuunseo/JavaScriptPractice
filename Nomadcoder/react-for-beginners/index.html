@@ -16,14 +16,25 @@
                 console.log(event.target.value);
                 setMinutes(event.target.value);
             };
+            const reset = () => {
+                setMinutes(0);
+            };
             return(
                 <div>
                     <h1>Super Converter</h1>
-                    <label htmlFor="minutes">Minutes</label>
-                    <input value = {minutes} onChange ={onChange} id="minutes" placeholder="Minutes" type="number"/>
-                    <label htmlFor="hours">Hours</label>
-                    <input id="hours" placeholder="Hours" type="number"/>
-                    <h4>You want to convert {minutes}</h4>
+                    <div>
+                        <label htmlFor="minutes">Minutes</label>
+                        <input value = {minutes} onChange ={onChange} id="minutes" placeholder="Minutes" type="number"/>
+                        <h4>You want to convert {minutes}</h4>
+                    </div>
+                    <div>
+                        <label htmlFor="hours">Hours</label>
+                        <input disabled value = {Math.round(minutes / 60)} id="hours" placeholder="Hours" type="number"/>
+                        <h4>Converted = {Math.round(minutes / 60)}</h4>
+                    </div>
+                    <div>
+                        <button onClick={reset}>Reset</button>
+                    </div>
                 </div>);
         }
         ReactDOM.createRoot(root).render(<Container/>);
