@@ -9,14 +9,21 @@
     <script type="text/babel">
         const root = document.getElementById("root");
         function Container(){
-            const [counter,setCounter] = React.useState(0);
-            const onClick= ()=>{
-                setCounter((current) => current + 1);
+            const [minutes, setMinutes] = React.useState();
+            const onChange = (event) => {
+                console.log("somebody wrote");
+                console.log("This is about ...", event);
+                console.log(event.target.value);
+                setMinutes(event.target.value);
             };
             return(
                 <div>
-                    <h3>Total Clicks: {counter}</h3>
-                    <button onClick={onClick}>Click Me</button>
+                    <h1>Super Converter</h1>
+                    <label htmlFor="minutes">Minutes</label>
+                    <input value = {minutes} onChange ={onChange} id="minutes" placeholder="Minutes" type="number"/>
+                    <label htmlFor="hours">Hours</label>
+                    <input id="hours" placeholder="Hours" type="number"/>
+                    <h4>You want to convert {minutes}</h4>
                 </div>);
         }
         ReactDOM.createRoot(root).render(<Container/>);
