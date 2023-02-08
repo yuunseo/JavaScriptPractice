@@ -35,7 +35,7 @@
                 </div>);
         }
         function KmToMiles(){
-            const [amount, setAmount] = React.useState(0);
+            const [amount, setAmount] = React.useState();
             const [flipped, setFlipped] = React.useState(false);
             const onChange = (event) => {setAmount(event.target.value)};
             const onReset = ()=>{setAmount(0)};
@@ -44,11 +44,11 @@
                 <div>
                     <div>
                         <label htmlFor="km">Killo Meters</label>
-                        <input disabled={flipped} id="km" value={flipped ? amount*1.60934 : amount} onChange={onChange}/>
+                        <input placeholder="Km" type="number"disabled={flipped} id="km" value={flipped ? amount*1.60934 : amount} onChange={onChange}/>
                     </div>
                     <div>
                         <label htmlFor="miles">Miles</label>
-                        <input disabled={!flipped}id="miles" value={flipped ?amount :  amount*0.621371} onChange={onChange}/>
+                        <input placeholder="Miles" type="number" disabled={!flipped}id="miles" value={flipped ?amount :  amount*0.621371} onChange={onChange}/>
                     </div>
                     <div>
                         <button onClick={onReset}>Reset</button>
