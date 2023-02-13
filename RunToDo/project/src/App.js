@@ -9,8 +9,12 @@ function App() {
       <div className="black-nav">
         <div style={fonts}>개발 블로그</div>
       </div>
-      <img src={logo} />
-      <h4>{title}</h4>
+      <div className="list">
+        <h3>{posts}</h3>
+        <p>2월 14일 발행</p>
+        <hr/>
+      </div>
+      
     </div>
   );
 }
