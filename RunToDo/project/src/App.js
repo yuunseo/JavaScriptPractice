@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css'; //스타일 설정해 줄 css 파일
 
 function App() {
-  let title = "오늘의 하루는 !?";
+  let posts = "강남 고기 맛집";
   let fonts = {color : 'pink', fontSize : '30px'};
   return (
     <div className="App">
