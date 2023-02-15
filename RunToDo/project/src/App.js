@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css'; //스타일 설정해 줄 css 파일
 import React, {useState} from 'react';
 
