@@ -31,9 +31,17 @@ class App extends Component {
     
     return(
       <div className="App">
-        <Subject 
+        {/*<Subject 
         title ={this.state.Subject.title} 
-        sub={this.state.Subject.sub}/>
+        sub={this.state.Subject.sub}/>*/}
+        <header>
+          <h1><a href="/" onClick={function(event){
+            console.log(event);
+            event.preventDefault();
+            this.setState({mode:'Welcome'});
+          }.bind(this)}>{this.state.Subject.title}</a></h1>
+          {this.state.Subject.sub}
+        </header>
         <TOC data={this.state.contents}/>
         <Content 
         title={_title}
