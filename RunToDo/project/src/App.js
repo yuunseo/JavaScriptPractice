@@ -9,6 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       mode:'Welcome',
+      selected_content_id:2 ,
       Subject:{title:"WEB",sub:"*:. world wide web .:*"},
       contents:[
         {id:1, title:'HTML', desc:'HTML is HyperText Markup Language.'},
@@ -25,24 +26,37 @@ class App extends Component {
       _title = this.state.Welcome.title;
       _desc = this.state.Welcome.desc;
     }else if(this.state.mode === 'read'){
-      _title = this.state.contents[0].title;
-      _desc = this.state.contents[0].desc;
+      var i = 0;
+      while(i <this.state.contents.length){
+        var data = this.state.contents[i];
+        if(data.id === this.state.selected_content_id){
+          _title = data.title;
+          _desc = data.desc;
+          break;
+        }
+        i+=1;
+      }
     }
     
     return(
       <div className="App">
-        {/*<Subject 
+        <Subject 
         title ={this.state.Subject.title} 
-        sub={this.state.Subject.sub}/>*/}
-        <header>
-          <h1><a href="/" onClick={function(event){
-            console.log(event);
-            event.preventDefault();
-            this.setState({mode:'Welcome'});
-          }.bind(this)}>{this.state.Subject.title}</a></h1>
-          {this.state.Subject.sub}
-        </header>
-        <TOC data={this.state.contents}/>
+        sub={this.state.Subject.sub}
+        onChangePage={function(){
+          this.setState({mode:'Welcome'});
+        }.bind(this)}/>
+      
+        <TOC 
+        data={this.state.contents}
+        onChangePage={function(id){
+          this.setState({
+            mode:"read",
+            selected_content_id:Number(id),
+          });
+        }.bind(this)
+        }
+        />
         <Content 
         title={_title}
         desc={_desc} />
