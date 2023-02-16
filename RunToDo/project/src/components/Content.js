@@ -4,8 +4,8 @@ class Content extends Component{
     render(){
       return(
         <article>
-          <h2>HTML</h2>
-          HTML is HyperTet Markup Language.
+          <h2>{this.props.title}</h2>
+          {this.props.desc}
         </article>
       );
     }
