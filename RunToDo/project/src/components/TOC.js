@@ -13,3 +13,5 @@ class TOC extends Component{
       );
     }
   }
+
+  export default TOC;
