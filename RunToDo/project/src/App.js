@@ -5,13 +5,24 @@ import Subject from './components/Subject';
 import Content from './components/Content';
 
 class App extends Component {
-  render(){
+  constructor(props){
+    super(props);
+    this.state = {
+      Subject:{title:"WEB",sub:"*:. world wide web .:*"}
+    }
+  }
 
+  render(){
+    
     return(
       <div className="App">
-        <Subject title ="WEB" sub="*:. world wide web .:*"/>
+        <Subject 
+        title ={this.state.Subject.title} 
+        sub={this.state.Subject.sub}/>
         <TOC />
-        <Content />
+        <Content 
+        title="HTML" 
+        sub="HTML is HyperText Markup Language."/>
       </div>
     );
   }
