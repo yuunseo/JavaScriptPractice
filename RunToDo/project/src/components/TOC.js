@@ -4,8 +4,7 @@ class TOC extends Component{
   shouldComponentUpdate(newProps,newState){
     if(this.props.data === newProps.date){
       return false;
-    }
-    return true;
+    }return true;
   }
     render(){
       var lists =[];
