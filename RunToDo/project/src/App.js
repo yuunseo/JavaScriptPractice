@@ -9,6 +9,7 @@ import CreateContent from './components/CreateContent'
 class App extends Component {
   constructor(props){
     super(props);
+    this.max_content_id=3; //state로 넣으면 불필요한 렌더링 발생.비합리적.
     this.state = {
       mode:'create',
       selected_content_id:2 ,
@@ -41,7 +42,12 @@ class App extends Component {
       }
       _article = <ReadContent title={_title} desc={_desc} />
     }else if(this.state.mode='create'){
-      _article = <CreateContent/>
+      _article = <CreateContent onSubmit={function(_title,_desc){
+        this.max_content_id = this.max_content_id+1;
+        var contents = this.state.contents.concat({id:this.max_content_id,title:_title,desc:_desc});
+        this.setState({contents:contents});
+
+      }.bind(this)}/>
     }
     
     return(
