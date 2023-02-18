@@ -58,7 +58,9 @@ class App extends Component {
         }.bind(this)
         }
         />
-        <Control />
+        <Control onChangeMode={function(mode){
+          this.setState({mode:mode});
+        }.bind(this)}/>
         <Content 
         title={_title}
         desc={_desc} />
