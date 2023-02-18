@@ -1,15 +1,16 @@
-import './App.css'; //스타일 설정해 줄 css 파일
-import React,{Component} from 'react';
-import TOC from './components/TOC';
-import Subject from './components/Subject';
-import Content from './components/Content';
-import Control from './components/Control';
+import './App.css' //스타일 설정해 줄 css 파일
+import React,{Component} from 'react'
+import TOC from './components/TOC'
+import Subject from './components/Subject'
+import ReadContent from './components/ReadContent'
+import Control from './components/Control'
+import CreateContent from './components/CreateContent'
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      mode:'Welcome',
+      mode:'create',
       selected_content_id:2 ,
       Subject:{title:"WEB",sub:"*:. world wide web .:*"},
       contents:[
@@ -22,10 +23,11 @@ class App extends Component {
   }
 
   render(){
-    var _title,_desc = null;
+    var _title,_desc,_article = null;
     if(this.state.mode === 'Welcome'){
       _title = this.state.Welcome.title;
       _desc = this.state.Welcome.desc;
+      _article = <ReadContent title={_title} desc={_desc} /> //게시글을 볼 수 있게 하는 readContent
     }else if(this.state.mode === 'read'){
       var i = 0;
       while(i <this.state.contents.length){
@@ -37,6 +39,9 @@ class App extends Component {
         }
         i+=1;
       }
+      _article = <ReadContent title={_title} desc={_desc} />
+    }else if(this.state.mode='create'){
+      _article = <CreateContent/>
     }
     
     return(
@@ -61,9 +66,7 @@ class App extends Component {
         <Control onChangeMode={function(mode){
           this.setState({mode:mode});
         }.bind(this)}/>
-        <Content 
-        title={_title}
-        desc={_desc} />
+        {_article}
       </div>
     );
   }
